@@ -12,5 +12,5 @@ if __name__ == "__main__":
         str = "arguments."
     print("{:d} {:s}".format(nb_arg, str))
     if nb_arg > 0:
-        for i in range (1, nb_arg + 1):
+        for i in range(1, nb_arg + 1):
             print("{:d}: {:s}".format(i, argv[i]))
