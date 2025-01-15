@@ -8,8 +8,8 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    operators_list = ["+", "-", "*", "/"]    
-    a = int(argv[1]) 
+    operators_list = ["+", "-", "*", "/"]
+    a = int(argv[1])
     b = int(argv[3])
     operator = argv[2]
 
