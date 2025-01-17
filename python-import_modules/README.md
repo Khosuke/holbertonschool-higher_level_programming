@@ -22,3 +22,19 @@ Write a program that prints all the names defined by the compiled module hidden_
 ### Task 5. Everything can be imported
 Write a program that imports the variable a from the file variable_load_5.py and prints its value.
 File: 5-variable_load.py
+
+### Advanced Task 6. Build my own calculator!
+Write a program that imports all functions from the file calculator_1.py and handles basic operations.
+File: 100-my_calculator.py
+
+### Advanced Task 7. Easy print
+Write a program that prints #pythoniscool, followed by a new line, in the standard output.
+File: 101-easy_print.py
+
+### Advanced Task 8. ByteCode -> Python #3
+Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
+File: 102-magic_calculation.py
+
+### Advanced Task 9. Fast alphabet
+Write a program that prints the alphabet in uppercase, followed by a new line.
+File: 103-fast_alphabet.py
