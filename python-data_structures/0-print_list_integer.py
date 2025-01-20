@@ -3,4 +3,5 @@
 def print_list_integer(my_list=[]):
     len_list = len(my_list)
     for i in range(0, len_list):
-        print("{}".format(my_list[i]))
+        str = "{}"
+        print(str.format(my_list[i]))
