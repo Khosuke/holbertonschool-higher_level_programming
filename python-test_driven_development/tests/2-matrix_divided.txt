@@ -24,6 +24,11 @@ This is a test file, First import ``matrix_divided`` from ``matrix_divided``
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+    >>> matrix_divided([["1", 2, 3], [4, 5, "6"]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
     >>> matrix_divided([[12, 23, 34], [45, 56, 78]], 0)
     Traceback (most recent call last):
         ...
@@ -33,3 +38,8 @@ This is a test file, First import ``matrix_divided`` from ``matrix_divided``
     Traceback (most recent call last):
         ...
     TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2] [3, 4]], float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
