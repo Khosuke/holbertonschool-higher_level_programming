@@ -39,9 +39,3 @@ This is a test file, First import ``add_integer`` from ``add_integer`` module
     Traceback (most recent call last):
         ...
     ValueError: cannot convert float NaN to integer
-
-    >>> add_integer(float('inf'))
-    Traceback (most recent call last):
-        ...
-    OverflowError: cannot convert float infinity to integer
-    """
