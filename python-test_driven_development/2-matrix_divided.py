@@ -24,9 +24,13 @@ def matrix_divided(matrix, div):
     A ZeroDivisionError is raised if div is zero
     """
     if (not (isinstance(matrix, list)) and not
-        isinstance([row for row in matrix], list) and not
-            isinstance(((el for el in row) for row in matrix), (int, float))):
-        raise TypeError("matrix must be a matrix (list of lists)"
+        isinstance([row for row in matrix], list)):
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
+    for row in matrix:
+        for elem in row:
+            if not isinstance(elem, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
     if len(set(map(len, matrix))) != 1:
         raise TypeError("Each row of the matrix must have the same size")

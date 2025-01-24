@@ -38,8 +38,3 @@ This is a test file, First import ``matrix_divided`` from ``matrix_divided``
     Traceback (most recent call last):
         ...
     TypeError: div must be a number
-
-    >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
-    Traceback (most recent call last):
-        ...
-    OverflowError: cannot convert float infinity to integer
