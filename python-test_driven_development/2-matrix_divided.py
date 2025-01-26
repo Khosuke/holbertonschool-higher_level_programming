@@ -9,14 +9,14 @@ matrix = [
     [4, 5, 6]
 ]
 >>> matrix_divided(matrix, 2)
-[[0.5, 1, 1.5], [2, 2.5, 3]]
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
 """
 
 
 def matrix_divided(matrix, div):
     """
     Return a new matrix with every element of the input
-        matrix divided by div
+        'matrix' divided by 'div'
     A TypeError is raised if the inputed matrix is not a
         list of list of integers or floats or
         if the lists of the matrix doesn't have the same size or

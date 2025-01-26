@@ -14,6 +14,7 @@ def say_my_name(first_name, last_name=""):
     This function prints "My name is <first_name> <last_name>"
     It need a first name as input but can omit the last name
     Both arguments needs to be a string
+    Raises a TypeError if either arguments are not strings.
     """
 
     if not isinstance(first_name, str):
