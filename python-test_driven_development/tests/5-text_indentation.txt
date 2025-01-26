@@ -20,7 +20,7 @@ First we need to import ``text_indentation`` function from ``text_indentation`` 
 
     >>> text_indentation("")
     
-    >>> text_indentation("    Lorem Ipsum.")
+    >>> text_indentation("    Lorem Ipsum.   ")
     Lorem Ipsum.
     <BLANKLINE>
 

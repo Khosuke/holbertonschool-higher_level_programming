@@ -22,11 +22,17 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    text = text.lstrip()
+    idx = 0
+    while idx < len(text) and text[idx] == ' ':
+        idx += 1
 
-    for i in range(len(text)):
-        print(text[i], end="")
-        if text[i] in ".?:":
-            print("\n")
-            while i + 1 < len(text) and text[i + 1] == ' ':
-                i += 1
+    while idx < len(text):
+        print(text[idx], end="")
+        if text[idx] == "\n" or text[idx] in ".?:":
+            if text[idx] in ".?:":
+                print("\n")
+            idx += 1
+            while idx < len(text) and text[idx] == ' ':
+                idx += 1
+            continue
+        idx += 1
