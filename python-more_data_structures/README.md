@@ -51,3 +51,15 @@ File: 11-multiply_list_map.py
 ## Task 12. Roman to Integer
 Create a function 'def roman_to_int(roman_string):' that converts a Roman numeral to an integer.
 File: 12-roman_to_int.py
+
+## Task 13. Weighted average!
+Write a function that returns the weighted average of all integers tuple (\<score\>, \<weight\>)
+File: 100-weight_average.py
+
+## Task 14. Squared by using map
+Write a function that computes the square value of all integers of a matrix using map
+File: 101-square_matrix_map.py
+
+## Task 15. Delete by value
+Write a function that deletes keys with a specific value in a dictionary.
+File: 102-complex_delete.py
