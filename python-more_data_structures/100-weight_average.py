@@ -2,7 +2,7 @@
 def weight_average(my_list=[]):
     if my_list == []:
         return 0
-    
+
     sum_weighted_score = 0
     sum_weight = 0
     for i in my_list:
