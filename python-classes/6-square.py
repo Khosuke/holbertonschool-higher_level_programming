@@ -48,20 +48,21 @@ class Square:
         Returns:
             int: size * size
         """
-        return self.__size * self.__size
+        return self.size * self.size
 
     def my_print(self):
         """my_print() prints the square using
             its 'size' and 'position' attributes.
         """
-        if self.__size == 0:
+        if self.size == 0:
             print()
-        for x in range(self.__position[1]):
+            return
+        for x in range(self.position[1]):
             print()
-        for i in range(self.__size):
-            for y in range(self.__position[0]):
+        for i in range(self.size):
+            for y in range(self.position[0]):
                 print(" ", end="")
-            for j in range(self.__size):
+            for j in range(self.size):
                 print("#", end="")
             print()
 
