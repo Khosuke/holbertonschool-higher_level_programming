@@ -3,7 +3,13 @@
 
 
 class Square:
-    """Define a square class."""
+    """Define a square class.
+
+    Attributes:
+        size (int): The size of the square.
+        position (:tuple: int, int): The position of the square.
+
+    """
     def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -17,6 +23,12 @@ class Square:
 
     @property
     def size(self):
+        """size: the 'size' of the square.
+
+        Raises:
+            TypeError if 'value' is not an int.
+            ValueError if 'value' is negative.
+        """
         return self.__size
 
     @size.setter
@@ -28,9 +40,17 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Area() return the area of the square which is 'size * size'.
+
+        Returns:
+            int: size * size
+        """
         return self.__size * self.__size
 
     def my_print(self):
+        """my_print() prints the square using
+        its 'size' and 'position' attributes.
+        """
         if self.__size == 0:
             print()
         for x in range(self.__position[1]):
@@ -44,6 +64,11 @@ class Square:
 
     @property
     def position(self):
+        """position() return the position of the square.
+
+        Raises:
+            TypeError if 'value' is not a tuple of 2 positive integers.
+        """
         return self.__position
 
     @position.setter
