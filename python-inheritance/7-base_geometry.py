@@ -15,7 +15,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-        This Method validates if the parameter 
+        This Method validates if the parameter
         is an integer or not.
         Args:
             name (str): The name of the parameter.
