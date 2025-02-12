@@ -16,7 +16,3 @@ except FileNotFoundError:
 
 args_list.extend(argv[1:])
 save_to_json_file(args_list, "add_item.json")
-
-
-
-
