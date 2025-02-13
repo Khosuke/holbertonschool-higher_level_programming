@@ -26,6 +26,8 @@ class VerboseList(list):
         """
         This method removes an item from the list.
         """
+        if item not in self:
+            raise ValueError("Item '{}' does not exist in the list".format(item))
         print("Removed [{}] from the list".format(item))
         super().remove(item)
 
@@ -33,5 +35,11 @@ class VerboseList(list):
         """
         This method removes an item at the chosen index.
         """
-        item = super().pop(index)
-        print("Popped [{}] from the list.".format(item))
+        if not self:
+            raise IndexError("Cannot pop from an empty list")
+        try:
+            item = super().pop(index)
+            print("Popped [{}] from the list.".format(item))
+            return item
+        except IndexError:
+            raise IndexError("List index {} is out of range".format(index))
