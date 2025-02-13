@@ -27,7 +27,7 @@ class VerboseList(list):
         This method removes an item from the list.
         """
         if item not in self:
-            raise ValueError("Item '{}' does not exist in the list".format(item))
+            raise ValueError(f"Item '{item}' does not exist in the list")
         print("Removed [{}] from the list".format(item))
         super().remove(item)
 
