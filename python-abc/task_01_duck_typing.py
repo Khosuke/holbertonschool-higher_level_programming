@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+This modules defines a Shape class and two subclass
 """
 from abc import ABC, abstractmethod
 from math import pi
@@ -61,7 +61,7 @@ class Rectangle(Shape):
         self.width = width
 
     def area(self):
-        return self.height * self.height
+        return self.height * self.width
 
     def perimeter(self):
         return 2 * (self.height + self.width)
@@ -72,6 +72,6 @@ def shape_info(shape):
     This function prints the area and perimeter of
     the shape passed to the function
     Args:
-        Shape: a Shape object
+        shape: a Shape object
     """
     print("Area: {}\nPerimeter: {}".format(shape.area(), shape.perimeter()))
