@@ -9,7 +9,7 @@ class CustomObject:
     """
     This class defines a custom object.
     """
-    def __init__(self, name, age, is_student):
+    def __init__(self, name="", age=0, is_student=True):
         """
         Initialize a CustomObject
         Args:
@@ -25,9 +25,9 @@ class CustomObject:
         """
         This method display a string representation of the object.
         """
-        print("Name: {}\n"
-              "Age: {}\n"
-              "Is Student: {}".format(self.name, self.age, self.is_student))
+        print("Name: {}".format(self.name))
+        print("Age: {}".format(self.age))
+        print("Is Student: {}".format(self.is_student))
 
     def serialize(self, filename):
         """
@@ -40,7 +40,7 @@ class CustomObject:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
         except pickle.PicklingError as e:
-            return None
+            return
 
     @classmethod
     def deserialize(cls, filename):
@@ -54,7 +54,6 @@ class CustomObject:
         """
         try:
             with open(filename, "rb") as f:
-                data_loaded = pickle.load(f)
-            return data_loaded
+                return pickle.load(f)
         except (FileNotFoundError, pickle.UnpicklingError) as e:
-            return None
+            return
