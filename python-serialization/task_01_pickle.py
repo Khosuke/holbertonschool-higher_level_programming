@@ -12,6 +12,10 @@ class CustomObject:
     def __init__(self, name, age, is_student):
         """
         Initialize a CustomObject
+        Args:
+            name: The name of the person
+            age: The age of the person
+            is_student: Whether the person is a student
         """
         self.name = name
         self.age = age
@@ -35,7 +39,7 @@ class CustomObject:
         try:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
-        except FileNotFoundError:
+        except pickle.PicklingError as e:
             return None
 
     @classmethod
@@ -52,5 +56,5 @@ class CustomObject:
             with open(filename, "rb") as f:
                 data_loaded = pickle.load(f)
             return data_loaded
-        except FileNotFoundError:
+        except (FileNotFoundError, pickle.UnpicklingError) as e:
             return None
