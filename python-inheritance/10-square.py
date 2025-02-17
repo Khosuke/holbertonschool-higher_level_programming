@@ -3,7 +3,6 @@
 This module defines a Square class that inherits
 from the Rectangle class.
 """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__("9-rectangle").Rectangle
 
 
@@ -17,7 +16,7 @@ class Square(Rectangle):
         Args:
             size: the size of the Square
         """
-        super().integer_validator("size", size)
+        self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
