@@ -15,12 +15,11 @@ def fetch_and_print_posts():
     JSON data and print out the titles of all the posts.
     """
     get_posts = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print("Status code: {}".format(get_posts.status_code))
+    print("Status Code: {}".format(get_posts.status_code))
     if get_posts.status_code == 200:
         posts_data = get_posts.json()
-        for i in range(len(posts_data)):
-            title_content = posts_data[i]["title"]
-            print("{}".format(title_content))
+        for title_content in posts_data:
+            print("{}".format(title_content["title"]))
 
 
 def fetch_and_save_posts():
