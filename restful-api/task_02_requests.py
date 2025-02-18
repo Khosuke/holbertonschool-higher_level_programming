@@ -25,8 +25,8 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """
-    This function fetches all post from JSONPlaceholder, 
-    structures the data into a list of dictionaries, 
+    This function fetches all post from JSONPlaceholder,
+    structures the data into a list of dictionaries,
     with keys and values for 'id', 'title', and 'body'.
     And writes this data into a CSV file.
     """
@@ -37,11 +37,9 @@ def fetch_and_save_posts():
         for i in range(len(data)):
             data[i].pop('userId')
             posts_dict.append(data[i])
-            
 
         with open("posts.csv", "w", newline="") as csv_file:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(posts_dict)
-
