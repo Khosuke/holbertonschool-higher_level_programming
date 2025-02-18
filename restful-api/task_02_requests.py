@@ -35,10 +35,12 @@ def fetch_and_save_posts():
     if get_posts.status_code == 200:
         data = get_posts.json()
         for i in range(len(data)):
+            data[i].pop('userId')
             posts_dict.append(data[i])
+            
 
         with open("posts.csv", "w", newline="") as csv_file:
-            fieldnames = ['userId', 'id', 'title', 'body']
+            fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(posts_dict)
