@@ -4,11 +4,10 @@ This modules defines a simple API using Flask,
 with multiples methods to access different routes
 and handle a POST request.
 """
-from flask import Flask, jsonify, request, json
+from flask import Flask, jsonify, request
 
 
 app = Flask(__name__)
-json.provider.DefaultJSONProvider.sort_keys = False
 users = {}
 
 
@@ -31,10 +30,7 @@ def jsonify_data():
     Returns:
         A JSON containing the list of all users.
     """
-    list_users = []
-    list_users += [users[key]["username"] for key in users]
-    response = json.dumps(list_users)
-    return response
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
@@ -59,9 +55,10 @@ def dynamic_route(username):
     """
     if username in users:
         response = jsonify(users[username])
+        return response, 200
     else:
         response = jsonify({"error": "User not found"})
-    return response, 200
+        return response, 404
 
 
 @app.route("/add_user", methods=["POST"])
