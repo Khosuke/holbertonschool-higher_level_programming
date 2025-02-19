@@ -4,10 +4,11 @@ This modules defines a simple API using Flask,
 with multiples methods to access different routes
 and handle a POST request.
 """
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, json
+
 
 app = Flask(__name__)
-
+json.provider.DefaultJSONProvider.sort_keys = False
 users = {}
 
 
