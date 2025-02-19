@@ -29,9 +29,11 @@ def jsonify_data():
     This methods allows to access the 'data' route containing users data.
 
     Returns:
-        The JSON users data.
+        A JSON containing the list of all users.
     """
-    response = jsonify(users)
+    list_users = []
+    list_users += [users[key]["username"] for key in users]
+    response = json.dumps(list_users)
     return response
 
 
