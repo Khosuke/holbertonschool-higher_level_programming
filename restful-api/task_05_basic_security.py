@@ -92,9 +92,9 @@ def jwt_auth_only():
     return "JWT Auth: Access Granted"
 
 
-@app.route("/admin-login", methods=["GET"])
+@app.route("/admin-only", methods=["GET"])
 @jwt_required()
-def admin_only():
+def admin_login():
     claim = get_jwt()
     user_role = claim.get("role")
     if user_role == 'admin':
