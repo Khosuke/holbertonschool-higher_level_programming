@@ -11,7 +11,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
+app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
 
 
@@ -74,7 +74,8 @@ def user_login():
     is_logged = verify_password(username, password)
     if is_logged is not None:
         access_token = create_access_token(
-            identity=username, additional_claims={"role": users[username]["role"]})
+            identity=username,
+            additional_claims={"role": users[username]["role"]})
         return jsonify(access_token=access_token)
     else:
         return jsonify({"error": "invalid credentials"}), 401
