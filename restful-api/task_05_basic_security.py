@@ -3,7 +3,7 @@
 This modules defines simple API Security
 and Authentication techniques.
 """
-from flask_jwt_extended import create_access_token, get_jwt_identity
+from flask_jwt_extended import create_access_token, get_jwt
 from flask_jwt_extended import jwt_required, JWTManager
 from flask import Flask, request, jsonify
 from flask_httpauth import HTTPBasicAuth
@@ -74,8 +74,7 @@ def user_login():
     is_logged = verify_password(username, password)
     if is_logged is not None:
         access_token = create_access_token(
-            identity={"username": users[username],
-                      "role": users[username]["role"]})
+            identity=username, additional_claims={"role": users[username]["role"]})
         return jsonify(access_token=access_token)
     else:
         return jsonify({"error": "invalid credentials"}), 401
@@ -95,8 +94,9 @@ def jwt_auth_only():
 @app.route("/admin-login", methods=["GET"])
 @jwt_required()
 def admin_only():
-    current_user = get_jwt_identity()
-    if current_user['role'] == 'admin':
+    claim = get_jwt()
+    user_role = claim.get("role")
+    if user_role == 'admin':
         return "Admin Access: Granted"
     else:
         return {"error": "Admin access required"}, 403
