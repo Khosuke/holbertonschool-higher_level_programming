@@ -81,7 +81,7 @@ def user_login():
         return jsonify({"error": "invalid credentials"}), 401
 
 
-@app.route("/JWT-protected", methods=["GET"])
+@app.route("/jwt-protected", methods=["GET"])
 @jwt_required()
 def jwt_auth_only():
     """
