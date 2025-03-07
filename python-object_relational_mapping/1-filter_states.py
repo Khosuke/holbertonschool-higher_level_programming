@@ -20,3 +20,5 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     for rows in rows:
         print(rows)
+    cur.close()
+    db_connect.close()
